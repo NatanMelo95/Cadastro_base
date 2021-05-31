@@ -64,7 +64,7 @@ public class ProdutoController {
 	    try {
 	    	produto.setId(id);
 	    	var produtoAtualizado = _repositoryProduto.save(produto);
-	    	return new ResponseEntity<>(produtoAtualizado, HttpStatus.OK);
+	    	return new ResponseEntity<>(produtoAtualizado, HttpStatus.NO_CONTENT);
 	    } catch (Exception e){
 	    	return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 	    }

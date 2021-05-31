@@ -56,7 +56,7 @@ public class ClienteController {
 	    try {
 	    	cliente.setId(id);
 	    	var clienteAtualizado = _repositoryCliente.save(cliente);
-	    	return new ResponseEntity<>(clienteAtualizado, HttpStatus.OK);
+	    	return new ResponseEntity<>(clienteAtualizado, HttpStatus.NO_CONTENT);
 	    } catch (Exception e){
 	    	return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 	    }

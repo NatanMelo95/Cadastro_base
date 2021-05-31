@@ -11,61 +11,52 @@ import com.sun.istack.NotNull;
 @Table
 
 public class Produto {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
-	@NotNull
-	private String nome;
-	private Integer quantidade;
-	private Double valor;
-	private String observacao;
-	
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
+    @NotNull
+    private String nome;
+    private Integer quantidade;
+    private Double valor;
+    private String observacao;
 
-	public Long getId() {
-		return id;
-	}
-	
-	public void setId(Long id) {
-		 this.id = id;
-				
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getNome() {
-		return nome;
-	}
+    public void setId(Long id) {
+         this.id = id;
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public Integer getQuantidade() {
-		return quantidade;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public void setQuantidade(Integer quantidade) {
-		this.quantidade = quantidade;
-	}
+    public Integer getQuantidade() {
+        return quantidade;
+    }
 
-	public Double getValor() {
-		return valor;
-	}
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
+    }
 
-	public void setValor(Double valor) {
-		this.valor = valor;
-	}
+    public Double getValor() {
+        return valor;
+    }
 
-	public String getObservacao() {
-		return observacao;
-	}
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
 
-	public void setObservacao(String observacao) {
-		this.observacao = observacao;
-	}
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
 }
-
-
-
-
-
-	
-	

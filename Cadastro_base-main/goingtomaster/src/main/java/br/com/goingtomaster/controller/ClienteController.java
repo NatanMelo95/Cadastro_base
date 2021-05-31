@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.http.HttpStatus;
 
-import br.com.goingtomaster.model.Produto;
-import br.com.goingtomaster.repository.ProdutoRepository;
+import br.com.goingtomaster.model.Cliente;
+import br.com.goingtomaster.repository.ClienteRepository;
 
 @RestController
 @RequestMapping("/api/cliente")
@@ -34,7 +35,7 @@ public class ClienteController {
         } catch (Exception e) {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
-                'Cliente não encontrado',
+                "Cliente não encontrado",
                 e
             );
         }
@@ -48,7 +49,7 @@ public class ClienteController {
         } catch (Exception e) {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
-                'Cliente não encontrado',
+                "Cliente não encontrado",
                 e
             );
         }
@@ -62,7 +63,7 @@ public class ClienteController {
         } catch (Exception e) {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
-                'Cliente não encontrado',
+                "Cliente não encontrado",
                 e
             );
         }
@@ -77,7 +78,7 @@ public class ClienteController {
         } catch (Exception e) {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
-                'Cliente não encontrado',
+                "Cliente não encontrado",
                 e
             );
         }
@@ -91,7 +92,7 @@ public class ClienteController {
         } catch (Exception e) {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
-                'Cliente não encontrado',
+                "Cliente não encontrado",
                 e
             );
         }

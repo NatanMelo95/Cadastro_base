@@ -1,19 +1,25 @@
 package br.com.goingtomaster.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
+import com.sun.istack.NotNull;
 
 @Entity
 @Table
-
 public class Cliente {
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long Id;
+	@NotNull
 	private String nome;
 	private Integer idade;
 	private String sexo;
 	private String estadoCivil;
 	private String profissao;
+	@NotNull
 	private Integer cpfOuCnpj;
 	
 	public Long getId() {

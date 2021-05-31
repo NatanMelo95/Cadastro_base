@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.http.HttpStatus;
@@ -34,7 +35,7 @@ public class ProdutoController {
         } catch (Exception e) {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
-                'Produto não encontrado',
+                "Produto não encontrado",
                 e
             );
         }
@@ -48,7 +49,7 @@ public class ProdutoController {
         } catch (Exception e) {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
-                'Produto não encontrado',
+                "Produto não encontrado",
                 e
             );
         }
@@ -62,7 +63,7 @@ public class ProdutoController {
         } catch (Exception e) {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
-                'Produto não encontrado',
+                "Produto não encontrado",
                 e
             );
         }
@@ -77,7 +78,7 @@ public class ProdutoController {
         } catch (Exception e) {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
-                'Produto não encontrado',
+                "Produto não encontrado",
                 e
             );
         }
@@ -91,7 +92,7 @@ public class ProdutoController {
         } catch (Exception e) {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
-                'Produto não encontrado',
+                "Produto não encontrado",
                 e
             );
         }

@@ -1,14 +1,20 @@
 package br.com.goingtomaster.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
+import com.sun.istack.NotNull;
 
 @Entity
 @Table
 
 public class Produto {
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	@NotNull
 	private String nome;
 	private Integer quantidade;
 	private Double valor;

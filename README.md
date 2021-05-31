@@ -5,8 +5,8 @@ Grupo: Going to Master
 
 Monitor: Natan Melo
 
-Gabriela Prizo
-Gabriel Esteves
-Marcelo Filgeuira
-Maria Regina
-Jessica Sampaio
+Gabriela Prizo;
+Gabriel Esteves;
+Marcelo Filgeuira;
+Maria Regina;
+Jessica Sampaio.

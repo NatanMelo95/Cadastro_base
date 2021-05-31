@@ -7,6 +7,6 @@ Monitor: Natan Melo
 
 Gabriela Prizo;
 Gabriel Esteves;
-Marcelo Filgeuira;
+Marcelo Filgueira;
 Maria Regina;
 Jessica Sampaio.

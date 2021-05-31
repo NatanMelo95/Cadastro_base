@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import br.com.goingtomaster.model.Produto;
 import br.com.goingtomaster.repository.ProdutoRepository;
@@ -42,47 +43,32 @@ public class ProdutoController {
     }
 
     @GetMapping("/{id}")
-    @ResponseStatus (code = HttpStatus.OK)
-    public Optional<Produto> obter(@PathVariable("id") Long id) {
-        try {
-            return this._repositoryProduto.findById(id);
-        } catch (Exception e) {
-            throw new ResponseStatusException(
-                HttpStatus.NOT_FOUND,
-                "Produto não encontrado",
-                e
-            );
-        }
-    }
+	public ResponseEntity<Produto> obter(@PathVariable("id") long id) {
+	    Optional<Produto> obterProduto = _repositoryProduto.findById(id);
 
+	    if (obterProduto.isPresent()) {
+	      return new ResponseEntity<>(obterProduto.get(), HttpStatus.OK);
+	    } else {
+	      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	    }
+	}
+        
     @PostMapping
     @ResponseStatus (code = HttpStatus.CREATED)
     public Produto adicionar(@RequestBody Produto produto) {
-        try {
-            return this._repositoryProduto.save(produto);
-        } catch (Exception e) {
-            throw new ResponseStatusException(
-                HttpStatus.NOT_FOUND,
-                "Produto não encontrado",
-                e
-            );
-        }
+    	return this._repositoryProduto.save(produto);
     }
 
     @PutMapping("/{id}")
-    @ResponseStatus (code = HttpStatus.OK)
-    public Produto atualizar(@PathVariable("id") Long id, @RequestBody Produto produto) {
-        try {
-            produto.setId(id);
-            return this._repositoryProduto.save(produto);
-        } catch (Exception e) {
-            throw new ResponseStatusException(
-                HttpStatus.NOT_FOUND,
-                "Produto não encontrado",
-                e
-            );
-        }
-    }
+	public ResponseEntity<Produto> atualizar(@PathVariable(value = "id") long id, @RequestBody Produto produto) {
+	    try {
+	    	produto.setId(id);
+	    	var produtoAtualizado = _repositoryProduto.save(produto);
+	    	return new ResponseEntity<>(produtoAtualizado, HttpStatus.OK);
+	    } catch (Exception e){
+	    	return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+	    }
+	}
 
     @DeleteMapping("/{id}")
     @ResponseStatus (code = HttpStatus.OK)

@@ -20,7 +20,7 @@ public class Cliente {
     private String estadoCivil;
     private String profissao;
     @NotNull
-    private Integer cpfOuCnpj;
+    private Long cpfOuCnpj;
 
     public Long getId() {
         return Id;
@@ -70,11 +70,11 @@ public class Cliente {
         this.profissao = profissao;
     }
 
-    public Integer getCpfOuCnpj() {
+    public Long getCpfOuCnpj() {
         return cpfOuCnpj;
     }
 
-    public void setCpfOuCnpj(Integer cpfOuCnpj) {
+    public void setCpfOuCnpj(Long cpfOuCnpj) {
         this.cpfOuCnpj = cpfOuCnpj;
     }
 }

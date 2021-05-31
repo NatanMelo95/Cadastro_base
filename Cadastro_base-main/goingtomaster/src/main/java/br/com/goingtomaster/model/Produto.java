@@ -1,4 +1,4 @@
-package br.com.goingtomaster;
+package br.com.goingtomaster.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

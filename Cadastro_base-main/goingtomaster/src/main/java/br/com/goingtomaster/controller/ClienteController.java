@@ -27,14 +27,14 @@ public class ClienteController {
     private ClienteRepository _repositoryCliente;
 
     @GetMapping
-    @ResponseStatus (code = HttpStatus.OK)
+    @ResponseStatus (code = HttpStatus.PARTIAL_CONTENT)
     public List<Cliente> obter() {
         try {
             return this._repositoryCliente.findAll();
         } catch (Exception e) {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
-                'Produto não encontrado',
+                'Cliente não encontrado',
                 e
             );
         }
@@ -48,21 +48,21 @@ public class ClienteController {
         } catch (Exception e) {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
-                'Produto não encontrado',
+                'Cliente não encontrado',
                 e
             );
         }
     }
 
     @PostMapping
-    @ResponseStatus (code = HttpStatus.OK)
+    @ResponseStatus (code = HttpStatus.CREATED)
     public Cliente adicionar(@RequestBody Cliente cliente) {
         try {
             return this._repositoryCliente.save(cliente);
         } catch (Exception e) {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
-                'Produto não encontrado',
+                'Cliente não encontrado',
                 e
             );
         }
@@ -77,7 +77,7 @@ public class ClienteController {
         } catch (Exception e) {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
-                'Produto não encontrado',
+                'Cliente não encontrado',
                 e
             );
         }
@@ -91,7 +91,7 @@ public class ClienteController {
         } catch (Exception e) {
             throw new ResponseStatusException(
                 HttpStatus.NOT_FOUND,
-                'Produto não encontrado',
+                'Cliente não encontrado',
                 e
             );
         }

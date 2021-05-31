@@ -27,7 +27,7 @@ public class ProdutoController {
     private ProdutoRepository _repositoryProduto;
 
     @GetMapping
-    @ResponseStatus (code = HttpStatus.OK)
+    @ResponseStatus (code = HttpStatus.PARTIAL_CONTENT)
     public List<Produto> obter() {
         try {
             return this._repositoryProduto.findAll();
@@ -55,7 +55,7 @@ public class ProdutoController {
     }
 
     @PostMapping
-    @ResponseStatus (code = HttpStatus.OK)
+    @ResponseStatus (code = HttpStatus.CREATED)
     public Produto adicionar(@RequestBody Produto produto) {
         try {
             return this._repositoryProduto.save(produto);
